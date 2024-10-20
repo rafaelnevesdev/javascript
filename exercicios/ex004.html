@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+
+        var nome = window.prompt('Qual é o seu nome?')
+        document.write(`Olá, ${nome}! seu nome tem ${nome.length} letras. <br>`)
+        document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}. <br>`)
+        document.write(`Seu nome em minúsculas é ${nome.toLowerCase()}.`)
+
+        /*
+
+        var s = 'JavaScript'
+
+        s.length // quantos caracteres a string tem (Não tem parenteses porque é atributo)
+        s.toUpperCase() // tudo para 'MAIUSCULAS'
+        s.toLowerCase() // tudo para 'minusculas'
+
+        -----------------------
+
+        FORMATAÇÃO DE NÚMEROS:
+
+        var n1 = 1545.5
+
+        n1.toFixed(2) // para aparecer e ficar fixo em duas casas decimais
+
+        n1.toFixed(2).replace('.', ',') // para aparecer duas casas decimais e trocar o ponto para virgula
+
+        n1.toLocate.String('pt-BR', {style: 'currency', currency: 'BRL'}) // para formatar o numero para dinheiro do país escolhido, podendo ser "BRL", "USD" ou "EUA"
+
+        */
+    </script>
+</body>
+</html>

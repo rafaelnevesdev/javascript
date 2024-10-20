@@ -24,7 +24,23 @@
         var n1 = Number(window.prompt('Digite um número: ')) // O prompt Sempre irá retornar uma STRING, mas podemos converter para NUMBER usando o Number.parseInt, Number.parseFloat ou até adicionando so o Number mesmo.
         var n2 = Number(window.prompt('Digite outro número: '))
         var s = n1 + n2
-        window.alert('A soma dos valores é ' + s) // + concatenação
+        window.alert(`A soma entre ${n1} e ${n2} é igual a ${s}`) 
+
+        /*
+
+        --- Exemplo ---
+
+        var s = 'JavaScript'
+
+        'Eu estou aprendendo s' // não faz interpolação
+        'Eu estou aprendendo' + s // usa concatenação
+        `Eu estou aprendendo ${s}` // usa template string
+
+        ${s} = placeholder
+
+        
+
+        */
 
         // para converter um Number para String basta por String(variavel) ou variavel.ToString()
 
