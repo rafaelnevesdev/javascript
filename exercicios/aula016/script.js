@@ -1,10 +1,15 @@
 const alunos = ['Rafael', 'Maria', 'João'];
 
-alunos.unshift('Rayanne')
-alunos.unshift('Lucas')
-console.log(alunos);
+console.log(alunos instanceof Array);
+console.log(typeof alunos);
 
 
+// console.log(alunos.slice(0, -2)); // 5 - 2
+// console.log(alunos.slice(0, 3));
+// const removido = alunos.shift();
+// console.log(removido);
+// alunos.unshift('Rayanne')
+// alunos.unshift('Lucas')
 // alunos[alunos.length] = 'Jose';
 // alunos[alunos.length] = 'Rayanne';
 // alunos[alunos.length] = 'Lucas';
