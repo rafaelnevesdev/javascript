@@ -4,8 +4,21 @@ Primitivos (imutáveis) - string, number, boolean, undefined, null (bigint, symb
 Referência (mutável) - array, object, function - Passados por referência
 */
 
+const a = {
+    nome: 'Rafael',
+    sobrenome: 'Neves'
+};
+
+const b = {...a};
+
+b.nome = 'Rayanne';
+console.log(a);
+console.log(b);
+
+/*
 let a = [1, 2, 3];
-let b = a;
+let b = [...a];
+let c = b;
 
 console.log(a, b);
 
@@ -15,6 +28,9 @@ console.log(a, b);
 b.pop();
 console.log(a, b);
 
+a.push('Rafael');
+console.log(a, c);
+*/
 
 /*let a = 'A';
 let b = a; // Cópia
