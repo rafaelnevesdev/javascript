@@ -19,11 +19,12 @@ function meuEscopo() {
             console.error('Por favor, insira valores numéricos válidos para peso e altura.')
         } else {
             const imc = peso/(altura ** 2)
+            console.log(imc)
         }
 
         // fluxo de verificação
         if (imc > 18.5) {
-            
+            resultado.innerHTML = `Seu IMC é ${imc} você está abaixo do peso`
         }
 
     }
