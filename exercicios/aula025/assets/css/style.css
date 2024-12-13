@@ -26,6 +26,10 @@ body {
   border-radius: 10px;
 }
 
+td {
+  padding: 0px 50px;
+}
+
 form input, form label, form button {
   display: block;
   width: 100%;
