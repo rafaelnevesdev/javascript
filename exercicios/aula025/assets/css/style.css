@@ -49,7 +49,7 @@ form input:focus {
 form button {
   border: none;
   background: var(--primary-color);
-  color: #fff;
+  color: white;
   font-size: 18px;
   font-weight: 700;
   height: 50px;
@@ -59,4 +59,18 @@ form button {
 
 form button:hover {
   background: var(--primary-color-darker);
+}
+
+.paragrafo-result {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.paragrafo-error {
+  background-color: rgb(255, 70, 70);
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
 }

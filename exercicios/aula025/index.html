@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Modelo</title>
+  <title>Calcule seu IMC</title>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -49,19 +49,19 @@
     </table>
 
     <h1>Calcule seu IMC</h1>
-    <form action="" method="get" class="form">
+    <form action="" method="get" id="form">
 
       <label for="peso">Peso: </label>
-      <input type="text" name="peso" class="peso"  placeholder="EM KG">
+      <input type="text" name="peso" id="peso" placeholder="Em Kg">
 
       <label for="altura">Altura: </label>
-      <input type="text" name="altura" class="altura" placeholder="EM METRO" >
+      <input type="text" name="altura" id="altura" placeholder="Em metro" >
 
       <button type="submit">Calcular</button>
 
     </form>
 
-    <p class="resultado" ></p>
+    <div id="resultado"></div>
 
   </section>
 

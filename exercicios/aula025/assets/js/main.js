@@ -1,52 +1,106 @@
 function meuEscopo() {
-
-    const form = document.querySelector('.form');
-    const resultado = document.querySelector('.resultado');
-
-    function recebeEventoForm(evento) {
-        evento.preventDefault();
-
-        // pega os valores do formulario
-        const pesoInput = Number(form.querySelector('.peso').value);
-        const alturaInput = Number(form.querySelector('.altura').value);
-
-        // converte para número
-        const peso = Number(pesoInput);
-        const altura = Number(alturaInput);
-
-        // validação de valores númericos
+    
+    const form = document.querySelector('#form');
+    
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // e.target significa "de onde eu to selecionando o evento"
+        const pesoInput = e.target.querySelector('#peso');
+        const alturaInput = e.target.querySelector('#altura');
+        
+        const peso = Number(pesoInput.value);
+        const altura = Number(alturaInput.value);
+        
         if (!peso || !altura || peso <= 0 || altura <= 0) {
-            resultado.innerHTML = `Por favor, insira valores válidos para peso e altura.`;
+            setResultado(`Por favor, insira valores válidos para peso e altura.`, false);
             return; // Interrompe o fluxo
         }
 
-        // calcula o IMC
-        let imc = peso / (altura ** 2);
+        const imc = getImc(peso, altura);
+        const nivelImc = getNivelImc(imc);
 
-        let mensagem = '';
+        const msg = `Seu IMC é ${imc} e ${nivelImc}`;
+        setResultado(msg, true);
 
-        // fluxo de verificação
+    });
+
+    function getNivelImc (imc) {
+        const nivel = [`você está abaixo do peso.`, `você está com peso normal.`, `você está com sobrepeso.`, `você está com obesidade grau 1.`, `você está com obesidade grau 2.`, `você está com obesidade grau 3.`];
+
         if (imc < 18.5) {
-            mensagem = `você está abaixo do peso.`;
-        } else if (imc >= 18.5 && imc < 24.9) {
-            mensagem = `você está com peso normal.`;
-        } else if (imc >= 25 && imc < 29.9) {
-            mensagem = `você está com sobrepeso.`;
-        } else if (imc >= 30 && imc < 34.9) {
-            mensagem = `você está com obesidade grau 1.`;
-        }else if (imc >= 35 && imc < 39.9) {
-            mensagem = `você está com obesidade grau 2.`;
-        } else {
-            mensagem = `você está com obesidade grau 3.`;
+            return nivel[0];
         }
-
-        // Exibe o resultado
-        resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)} e ${mensagem}`;
         
+        if (imc >= 18.5 && imc < 24.9) {
+            return nivel[1];
+        }
+        
+        if (imc >= 25 && imc < 29.9) {
+            return nivel[2];
+        }
+        
+        if (imc >= 30 && imc < 34.9) {
+            return nivel[3];
+        }
+        
+        if(imc >= 35 && imc < 39.9) {
+            return nivel[4];
+        }
+        
+        if (imc >= 39.9) {
+            return nivel[5];
+        }
+    }
+
+    function getImc (peso, altura) {
+        const imc = peso / (altura ** 2);
+        return imc.toFixed(2);
+    }
+
+    function createP () {
+        const p = document.createElement('p');
+        return p;
     }
     
-    form.addEventListener('submit',recebeEventoForm);
+    function setResultado (msg, isValid) {
+        const resultado = document.querySelector('#resultado');
+        resultado.innerHTML = '';
+
+        const p = createP();
+
+        if (isValid) {
+            p.classList.add('paragrafo-result');
+        } else {
+            p.classList.add('paragrafo-error');
+        }
+
+        p.innerHTML = msg
+        resultado.appendChild(p);
+    }
+}
+meuEscopo();
+/*
+
+
+
+
+
+    // converte para número
+    // validação de valores númericos
+
+    // calcula o IMC
+    
+
+    let mensagem = '';
+
+    // fluxo de verificação
+    
+
+    // Exibe o resultado
+    resultado.innerHTML = 
+
+    
 
 }
 
-meuEscopo();
+*/
