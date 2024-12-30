@@ -79,28 +79,3 @@ function meuEscopo() {
     }
 }
 meuEscopo();
-/*
-
-
-
-
-
-    // converte para número
-    // validação de valores númericos
-
-    // calcula o IMC
-    
-
-    let mensagem = '';
-
-    // fluxo de verificação
-    
-
-    // Exibe o resultado
-    resultado.innerHTML = 
-
-    
-
-}
-
-*/
