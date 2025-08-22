@@ -2,28 +2,22 @@
 const form = document.querySelector('.form');
 const resultado = document.querySelector('.resultado');
 
-function maiorNumero(num1, num2) {
-    let resultFunc;
-
-    if (num1 > num2) {
-        resultFunc = `O número ${num1} é maior que ${num2}.`; 
-    } else if (num2 > num1) {
-        resultFunc = `O número ${num2} é maior que ${num1}.`;
-    } else {
-        resultFunc = `Os números são iguais`;
-    }
-
-    return resultFunc
-}
+const maiorNumero = (num1, num2) => num1 === num2 ? 'Os números são iguais.' : num1 > num2 ? num1 : num2;
 
 function recebeEventoForm(evento) {
     evento.preventDefault();
 
-    const primeiroNumero = Number(form.querySelector('.primeiroNumero').Value);
-    const segundoNumero = Number(form.querySelector('.segundoNumero').Value);
+    const n1 = Number(form.querySelector('.primeiroNumero').value);
+    const n2 = Number(form.querySelector('.segundoNumero').value);
 
-    resultado.innerHTML = maiorNumero(primeiroNumero, segundoNumero)
+    if (isNaN(n1) || isNaN(n2)) {
+        resultado.innerHTML = 'Digite dois números válidos.';
+        return;
+    }
+
+    resultado.innerHTML = maiorNumero(n1, n2);
 }
+
 
 form.addEventListener('submit', recebeEventoForm)
 
