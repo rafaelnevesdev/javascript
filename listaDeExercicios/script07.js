@@ -6,4 +6,4 @@ const usuarios = [
   { nome: 'Maria', cidade: 'SP' }
 ];
 
-
+const agrupadoPorCidade = usuarios.reduce((prevVal, usuario) => {});
