@@ -32,12 +32,12 @@ body {
   margin: 20px 0;
 }
 
-div > p {
+#clock {
   padding: 20px 0;
 
   font-size: 3em;
 }
 
-.botoes {
+.buttons {
   margin: 20px 0;
 }
