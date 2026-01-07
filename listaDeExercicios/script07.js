@@ -16,9 +16,24 @@ for (const usuario of usuarios) {
     resultado[cidade] = [];
   }
 
-  resultado[cidade].push()
+  resultado[cidade].push(usuario.nome)
 
 }
+
+console.log(resultado);
+
+const agrupadoPorCidade = usuarios.reduce((acc, usuario) => {
+  const cidade = usuario.cidade;
+
+  if (!acc[cidade]) {
+    acc[cidade] = []
+  }
+
+  acc[cidade].push(usuario.nome)
+
+  return acc
+
+}, {});
 
 // const agrupadoPorCidade = usuarios.reduce((acc, usuario) => {
 
